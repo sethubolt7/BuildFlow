@@ -1,5 +1,10 @@
-import 'package:build_flow/Intro_screen.dart';
-import "package:flutter/material.dart";
+import 'package:build_flow/Intro_screen.dart'; // Import your IntroScreen widget here
+import 'package:flutter/material.dart';
+
 void main() {
-  runApp(IntroScreen());
+  runApp(
+    MaterialApp(
+      home: IntroScreen(),
+    ),
+  );
 }
