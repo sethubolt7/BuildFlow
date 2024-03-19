@@ -1,4 +1,5 @@
 import 'package:build_flow/user_main_screen.dart';
+import 'package:build_flow/widgets.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -19,17 +20,18 @@ class _LoginPageState extends State<LoginPage> {
         child: Container(
           child: Stack(
             children: [
-              SingleChildScrollView(child:
-              Column(
-                // mainAxisAlignment: MainAxisAlignment.center,
-                // crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Image.asset(
-                    "assets/IntroScreenImage.png",
-                    fit: BoxFit.fill,
-                  ),
-                ],
-              ),),
+              SingleChildScrollView(
+                child: Column(
+                  // mainAxisAlignment: MainAxisAlignment.center,
+                  // crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Image.asset(
+                      "assets/IntroScreenImage.png",
+                      fit: BoxFit.fill,
+                    ),
+                  ],
+                ),
+              ),
               Align(
                 alignment: Alignment.bottomCenter,
                 child: Padding(
@@ -38,41 +40,16 @@ class _LoginPageState extends State<LoginPage> {
                     // crossAxisAlignment: CrossAxisAlignment.stretch,
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      TextField(
-                        decoration: InputDecoration(
-                          filled: true,
-                          fillColor: const Color(0xFFE6E6DD),
-                          hintText: 'Job ID',
-                          hintStyle: const TextStyle(
-                              color: Colors.black),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide: const BorderSide(
-                                color: Colors.black),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 10.0),
-                        child: TextField(
-                          decoration: InputDecoration(
-                            filled: true,
-                            fillColor: const Color(0xFFE6E6DD),
-                            hintText: 'Password',
-                            hintStyle: const TextStyle(
-                                color: Colors.black),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10),
-                              borderSide: const BorderSide(
-                                  color: Colors.black),
-                            ),
-                          ),
-                        ),
+                      const TextFieldWidget(hintText: "Job ID", borderRadius: 20.0),
+                      const Padding(
+                        padding: EdgeInsets.only(top: 10.0),
+                        child: TextFieldWidget(hintText: "PassWord", borderRadius: 20.0),
                       ),
                       ElevatedButton(
                         onPressed: () {
                           Navigator.of(context).push(
-                            MaterialPageRoute(builder: (context) => UserMainScreen()),
+                            MaterialPageRoute(
+                                builder: (context) => UserMainScreen()),
                           );
                         },
                         style: ButtonStyle(
